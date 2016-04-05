@@ -34,7 +34,7 @@ gulp.task('build:css', function() {
 			'include css': true
 		}))
 		.pipe(minifyCSS())
-		.pipe(rename('sgrid.min.css'))
+		.pipe(rename('srgrid.min.css'))
 		.pipe(gulp.dest(config.stylus.output));
 });
 
