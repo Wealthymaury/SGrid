@@ -1,6 +1,6 @@
 {
-  "name": "sgrid",
-  "version": "0.0.1",
+  "name": "sim-grid",
+  "version": "0.1.0",
   "description": "A simple grid system and more...",
   "main": "gulpfile.js",
   "scripts": {
