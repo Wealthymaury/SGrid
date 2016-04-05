@@ -1,0 +1,149 @@
+.container
+	margin-right auto
+	margin-left auto
+	padding-right 2%
+	padding-left 2%
+	max-width 98%
+
+.row
+	box-sizing border-box
+	display flex
+	flex 0 1 auto
+	flex-direction row
+	flex-wrap wrap
+	margin-right -1%
+	margin-left -1%
+	
+.col
+	box-sizing border-box
+	flex 0 0 auto
+	padding-right 1%
+	padding-left 1%
+	
+	&[class*="push-"],
+	&[class*="pull-"]
+		position relative
+	
+	for $i in range(1, $num-cols)
+		$perc = (100 / ($num-cols / $i)) + "%"
+		&.s{$i}
+			width: $perc
+			flex-preferred-size $perc
+			flex-basis $perc
+			max-width $perc
+			
+		&.offset-s{$i}
+			margin-left $perc
+			
+		&.pull-s{$i}
+			right $perc
+			
+		&.push-s{$i}
+			left $perc
+			
+	@media $small-and-up
+		for $i in range(1, $num-cols)
+			$perc = (100 / ($num-cols / $i)) + "%"
+			&.m{$i}
+				width: $perc
+				flex-preferred-size $perc
+				flex-basis $perc
+				max-width $perc
+				
+			&.offset-m{$i}
+				margin-left $perc
+				
+			&.pull-m{$i}
+				right $perc
+				
+			&.push-m{$i}
+				left $perc
+		
+	@media $medium-and-up
+		for $i in range(1, $num-cols)
+			$perc = (100 / ($num-cols / $i)) + "%"
+			&.l{$i}
+				width: $perc
+				flex-preferred-size $perc
+				flex-basis $perc
+				max-width $perc
+				
+			&.offset-l{$i}
+				margin-left $perc
+				
+			&.pull-l{$i}
+				right $perc
+				
+			&.push-l{$i}
+				left $perc
+				
+	@media $large-and-up
+		for $i in range(1, $num-cols)
+			$perc = (100 / ($num-cols / $i)) + "%"
+			&.xl{$i}
+				width: $perc
+				flex-preferred-size $perc
+				flex-basis $perc
+				max-width $perc
+				
+			&.offset-xl{$i}
+				margin-left $perc
+				
+			&.pull-xl{$i}
+				right $perc
+				
+			&.push-xl{$i}
+				left $perc
+		
+.start
+	justify-content flex-start
+	flex-pack start
+	box-pack start
+	justify-content flex-start
+	text-align start
+
+.center
+	justify-content center
+	flex-pack center
+	box-pack center
+	text-align center
+
+.end
+	justify-content flex-end
+	flex-pack end
+	box-pack end
+	text-align end
+
+.top
+	align-items flex-start
+	flex-align start
+	box-align start
+
+.middle
+	align-items center
+	flex-align center
+	box-align center
+
+.bottom
+	align-items flex-end
+	flex-align end
+	box-align end
+
+.around
+	justify-content space-around
+	flex-pack distribute
+
+.between
+	justify-content space-between
+	flex-pack justify
+	box-pack justify
+
+.first
+	order -1
+	flex-order -1
+	box-ordinal-group 0
+
+.last
+	order 1
+	flex-order 1
+	box-ordinal-group 2
